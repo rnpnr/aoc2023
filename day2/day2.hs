@@ -20,19 +20,19 @@
 -- each colour needed to make a game valid. Provide the sum of
 -- the powers of all games.
 --
+{-# LANGUAGE OverloadedStrings #-}
+
 import qualified Data.Text as T
 import qualified Data.Text.IO as TI
 import Text.Printf (printf)
 
 splitgame :: T.Text -> (Int, [(Int, T.Text)])
 splitgame st =
-    let (gn, t) = T.breakOn (T.pack ": ") st
+    let (gn, t) = T.breakOn ": " st
         n = read $ T.unpack $ snd $ T.break (== ' ') gn :: Int
         tuples =
             map to_int_text . map (T.break (== ' ')) $
-            T.splitOn (T.pack ", ") $
-            T.replace (T.pack ": ") (T.pack "") $
-            T.replace (T.pack ";") (T.pack ",") t
+            T.splitOn ", " $ T.replace ": " "" $ T.replace ";" "," t
      in (n, tuples)
 
 to_int_text :: (T.Text, T.Text) -> (Int, T.Text)
@@ -43,9 +43,9 @@ get_colour_list c l = map fst $ filter ((== c) . snd) l
 
 get_rgb_triple :: [(Int, T.Text)] -> ([Int], [Int], [Int])
 get_rgb_triple l =
-    let r = get_colour_list (T.pack " red") l
-        g = get_colour_list (T.pack " green") l
-        b = get_colour_list (T.pack " blue") l
+    let r = get_colour_list " red" l
+        g = get_colour_list " green" l
+        b = get_colour_list " blue" l
      in (r, g, b)
 
 isvalidgame :: (Int, [(Int, T.Text)]) -> Int

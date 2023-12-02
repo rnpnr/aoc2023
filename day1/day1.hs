@@ -16,6 +16,8 @@
 -- zoneight234 -> 14
 -- (Output) 56
 --
+{-# LANGUAGE OverloadedStrings #-}
+
 import Data.Char
 import qualified Data.Text as T
 import qualified Data.Text.IO as TI
@@ -30,8 +32,8 @@ tocode st =
         z = ord '0'
      in 10 * (ord h - z) + (ord t - z)
 
-replmap :: (String, String) -> (T.Text -> T.Text)
-replmap (f, s) = T.replace (T.pack f) (T.pack s)
+replmap :: (T.Text, T.Text) -> (T.Text -> T.Text)
+replmap (f, s) = T.replace f s
 
 repstrnums :: T.Text -> T.Text
 repstrnums =
