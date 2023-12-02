@@ -1,17 +1,17 @@
 # Advent of Code 2023
 
-The repo where I will dump all my solutions to AOC 2023.
+Here is where I will dump all my solutions to AOC 2023.
 
 ## Language(s)
 
 This year I plan on completing all the tasks in Haskell. Going
-into to I would say I'm only slightly beyond "Hello World!" level
-though I did write an ultra slow JSON like parser at one point.
+into it I would say I'm only slightly beyond "Hello World!". But I
+did write an ultra slow JSON like parser at one point.
 
-I also plan on completing some tasks in C as well. I want to test
-if I can write something in Haskell that will outperform a trivial
-solution in C. My prior experience has taught me otherwise but I'm
-hoping to be surprised.
+I also plan on completing some tasks in both Haskell and C. I want
+to find out if I can write something in Haskell that will
+outperform a trivial solution in C. My prior experience has taught
+me otherwise but I'm hoping to be surprised.
 
 ## Documentation
 
