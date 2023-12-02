@@ -1,12 +1,20 @@
--- AOC 2023: Day 1 Part 1
+-- AOC 2023: Day 1
 -- Given a list of newline separated strings containing ASCII digits
 -- interspersed among other characters take the first and last ASCII
 -- digit from each line as a 2 digit number then sum all of them together
 -- 
--- Example:
+-- Example (Part 1):
 -- treb7uchet -> 77
 -- 1abc2 -> 12
 -- (Output) 89
+--
+-- Part 2: English names are also intersperced with the digits and
+-- are also valid for making up the first and last digits.
+--
+-- Example (Part 2):
+-- 4nineeightseven2 -> 42
+-- zoneight234 -> 14
+-- (Output) 56
 --
 import Data.Char
 import qualified Data.Text as T
